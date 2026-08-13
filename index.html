@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Govt Arts College - Timetable</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased pb-10">
+
+    <!-- Header Section with Logo -->
+    <header class="bg-blue-900 text-white p-4 shadow-md rounded-b-2xl">
+        <div class="flex items-center space-x-4 max-w-md mx-auto">
+            <!-- Logo Image (User will replace logo.jpg) -->
+            <img src="data:image/jpeg;base64,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" alt="Logo" class="w-16 h-16 object-contain bg-white p-1 rounded-full shadow-lg">
+            
+            <div class="flex-1">
+            
+                <h1 class="text-md font-bold leading-tight text-left">GOVERNMENT ARTS COLLEGE <span class="text-xs font-normal">(AUTONOMOUS)</span></h1>
+                <p class="text-xs text-left text-blue-200">NANDANAM, CHENNAI-35</p>
+                <p class="text-xs mt-1 text-yellow-300 font-semibold text-left">DEPARTMENT OF COMPUTER SCIENCE</p>
+            
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto mt-5 px-4">
+        
+        <!-- Time and Date Controls -->
+        <div class="bg-white rounded-xl shadow p-4 mb-4 flex justify-between items-center border-l-4 border-blue-500">
+            <div>
+                <p class="text-xs text-gray-500 font-semibold uppercase">Current Time</p>
+                <p id="liveTime" class="text-lg font-bold text-blue-900">--:--:--</p>
+            </div>
+            <div>
+                <input type="date" id="datePicker" class="border border-gray-300 p-1.5 rounded-lg text-sm bg-gray-50 text-gray-800 font-semibold outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+        </div>
+
+        <!-- Dynamic Status Card -->
+        <div id="statusCard" class="bg-white rounded-xl shadow mb-5 fade-in">
+            <!-- Content injected by JS -->
+        </div>
+
+        <!-- Timetable Section -->
+        <div id="timetableSection" class="space-y-4 fade-in">
+            <!-- Cards injected by JS -->
+        </div>
+
+    </main>
+
+    <!-- Load Data and Logic -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
