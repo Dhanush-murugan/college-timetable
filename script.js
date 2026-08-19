@@ -111,7 +111,12 @@ function loadTimetable(dayOrder) {
 
             // Map using dictionaries from data.js
             const fullSubject = subjectList[subjectCode] || subjectCode;
-            const fullStaff = staffList[staffCode] || staffCode;
+
+            // புதிய லாஜிக்: ஸ்டாஃப் பெயர் இல்லை என்றால் "சப்ஜெக்ட் பெயர் (Staff)" என காட்டும்
+            let fullStaff = staffList[staffCode] || staffCode;
+            if (staffCode.trim() === "") {
+                fullStaff = fullSubject + " (Staff)";
+            }
 
             // 3-Column Layout using CSS Grid
             subjectsHTML += `
