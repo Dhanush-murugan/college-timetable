@@ -17,6 +17,7 @@ function getDayName(dateString) {
 function updateUI(selectedDate) {
     // selectedDate format: "YYYY-MM-DD"
     const parts = selectedDate.split("-");
+    document.getElementById('dateDisplay').innerText = `${parts[2]}/${parts[1]}/${parts[0]}`;
     const yearMonth = `${parts[0]}-${parts[1]}`;
     const dayIndex = parseInt(parts[2], 10) - 1; // Array is 0-indexed
 
