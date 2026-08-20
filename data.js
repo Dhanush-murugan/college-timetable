@@ -28,7 +28,7 @@ const subjectList = {
     "DBMS LAB": "DBMS Practical",
     "ADALAB": "ADA Practical",
     "OOAD": "Object Oriented Analysis & Design",
-    "A.PY": "Applied Python",
+    "A.PY": "Python Advance",
     "ADA": "Analysis and Design of Algorithms",
     "DIP": "Digital Image Processing",
     "NSC": "Network Security & Cryptography",
