@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Math Challenge</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    color:white;
+    background:
+        radial-gradient(circle at 20% 10%,#303b82,transparent 35%),
+        radial-gradient(circle at 90% 90%,#4a1765,transparent 35%),
+        #080b18;
+    overflow:hidden;
+}
+
+/* HEADER */
+
+header{
+    height:70px;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    background:rgba(8,11,24,.65);
+    backdrop-filter:blur(15px);
+}
+
+.back{
+    width:45px;
+    height:45px;
+    border:0;
+    border-radius:14px;
+    background:rgba(255,255,255,.08);
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.back:active{
+    transform:scale(.92);
+}
+
+.logo{
+    margin-left:15px;
+    font-size:19px;
+    font-weight:800;
+}
+
+/* MAIN */
+
+main{
+    height:calc(100vh - 70px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:500px;
+    padding:30px;
+    border-radius:30px;
+    text-align:center;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+    backdrop-filter:blur(20px);
+}
+
+/* START */
+
+.gameIcon{
+    width:85px;
+    height:85px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:27px;
+    font-size:45px;
+    background:linear-gradient(145deg,#7d5cff,#4932d8);
+    box-shadow:0 15px 35px rgba(90,65,255,.35);
+}
+
+h1{
+    margin-top:22px;
+    font-size:32px;
+}
+
+.subtitle{
+    color:#a7acc2;
+    line-height:1.6;
+    margin:12px 0 28px;
+}
+
+.play{
+    width:100%;
+    height:58px;
+    border:0;
+    border-radius:18px;
+    color:white;
+    background:linear-gradient(135deg,#7d5cff,#553be5);
+    font-size:19px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.play:active{
+    transform:scale(.97);
+}
+
+/* GAME */
+
+#game{
+    display:none;
+}
+
+.stats{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+}
+
+.stat{
+    flex:1;
+    padding:12px;
+    border-radius:15px;
+    background:rgba(255,255,255,.07);
+}
+
+.stat small{
+    display:block;
+    color:#8f95ad;
+    font-size:11px;
+    margin-bottom:5px;
+}
+
+.stat strong{
+    font-size:20px;
+}
+
+#timer{
+    color:#8d76ff;
+}
+
+.question{
+    margin:45px 0 30px;
+    font-size:52px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.answer{
+    width:100%;
+    height:70px;
+    border-radius:20px;
+    border:2px solid rgba(255,255,255,.1);
+    background:rgba(0,0,0,.2);
+    color:white;
+    outline:none;
+    text-align:center;
+    font-size:30px;
+    font-weight:800;
+}
+
+.answer:focus{
+    border-color:#8064ff;
+    box-shadow:0 0 0 4px rgba(128,100,255,.12);
+}
+
+.hint{
+    margin-top:15px;
+    color:#777e99;
+    font-size:13px;
+}
+
+/* RESULT */
+
+#result{
+    display:none;
+}
+
+.resultTitle{
+    font-size:30px;
+}
+
+.stars{
+    margin:22px 0;
+    font-size:48px;
+    letter-spacing:5px;
+}
+
+.star{
+    opacity:.15;
+    filter:grayscale(1);
+}
+
+.star.active{
+    opacity:1;
+    filter:none;
+}
+
+.percent{
+    font-size:58px;
+    font-weight:900;
+    background:linear-gradient(135deg,#fff,#9d88ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.resultText{
+    color:#a7acc2;
+    margin:8px 0 25px;
+}
+
+.results{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.resultBox{
+    padding:17px;
+    border-radius:16px;
+    background:rgba(255,255,255,.06);
+}
+
+.resultBox small{
+    display:block;
+    color:#8d93aa;
+    margin-bottom:5px;
+}
+
+.resultBox strong{
+    font-size:22px;
+}
+
+.retry{
+    width:100%;
+    height:55px;
+    border:0;
+    border-radius:17px;
+    background:white;
+    color:#101321;
+    font-size:18px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header{
+        height:62px;
+        padding:0 14px;
+    }
+
+    main{
+        height:calc(100vh - 62px);
+        padding:15px;
+    }
+
+    .card{
+        padding:24px 18px;
+        border-radius:25px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    .question{
+        font-size:42px;
+        margin:38px 0 25px;
+    }
+
+    .answer{
+        height:65px;
+        font-size:27px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <!-- Back button -->
+    <button class="back" onclick="goBack()">‹</button>
+
+    <div class="logo">
+        🧠 Math Challenge
+    </div>
+
+</header>
+
+
+<main>
+
+<div class="card">
+
+    <!-- START SCREEN -->
+
+    <section id="start">
+
+        <div class="gameIcon">
+            🎮
+        </div>
+
+        <h1>Ready to Win?</h1>
+
+        <p class="subtitle">
+            Solve as many math questions as you can
+            in just 60 seconds.
+        </p>
+
+        <button class="play" onclick="startGame()">
+            ▶ &nbsp; Play
+        </button>
+
+    </section>
+
+
+    <!-- GAME SCREEN -->
+
+    <section id="game">
+
+        <div class="stats">
+
+            <div class="stat">
+                <small>TIME</small>
+                <strong id="time">60</strong>
+            </div>
+
+            <div class="stat">
+                <small>CORRECT</small>
+                <strong id="correct">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="question" id="question">
+            5 + 3
+        </div>
+
+
+        <input
+            id="answer"
+            class="answer"
+            type="number"
+            inputmode="numeric"
+            autocomplete="off"
+            placeholder="Answer"
+        >
+
+        <div class="hint">
+            Type your answer — no Enter needed
+        </div>
+
+    </section>
+
+
+    <!-- RESULT SCREEN -->
+
+    <section id="result">
+
+        <div class="resultTitle">
+            Time's Up! 🎉
+        </div>
+
+        <div class="stars">
+
+            <span id="s1" class="star">★</span>
+            <span id="s2" class="star">★</span>
+            <span id="s3" class="star">★</span>
+
+        </div>
+
+        <div class="percent" id="percent">
+            0%
+        </div>
+
+        <p class="resultText">
+            Great job! Can you beat your score?
+        </p>
+
+        <div class="results">
+
+            <div class="resultBox">
+                <small>QUESTIONS</small>
+                <strong id="total">0</strong>
+            </div>
+
+            <div class="resultBox">
+                <small>CORRECT</small>
+                <strong id="finalCorrect">0</strong>
+            </div>
+
+        </div>
+
+        <button class="retry" onclick="startGame()">
+            ↻ &nbsp; Retry
+        </button>
+
+    </section>
+
+</div>
+
+</main>
+
+
+<script>
+
+let correct = 0;
+let total = 0;
+let answer = 0;
+let time = 60;
+let timer;
+
+
+/* BACK */
+
+function goBack(){
+
+    /*
+       If game.html was opened from another page,
+       this returns to the previous page.
+    */
+
+    if(history.length > 1){
+        history.back();
+    }else{
+        window.location.href = "index.html";
+    }
+
+}
+
+
+/* START GAME */
+
+function startGame(){
+
+    correct = 0;
+    total = 0;
+    time = 60;
+
+    document.getElementById("start").style.display="none";
+    document.getElementById("result").style.display="none";
+    document.getElementById("game").style.display="block";
+
+    document.getElementById("correct").textContent="0";
+    document.getElementById("time").textContent="60";
+
+    document.getElementById("answer").value="";
+
+    newQuestion();
+
+    document.getElementById("answer").focus();
+
+    clearInterval(timer);
+
+    timer=setInterval(()=>{
+
+        time--;
+
+        document.getElementById("time").textContent=time;
+
+        if(time<=0){
+
+            endGame();
+
+        }
+
+    },1000);
+
+}
+
+
+/* NEW QUESTION */
+
+function newQuestion(){
+
+    let operations=["+","-","×","÷"];
+
+    let op=
+        operations[
+            Math.floor(Math.random()*operations.length)
+        ];
+
+    let a,b;
+
+
+    if(op==="+"){
+
+        a=random(1,50);
+        b=random(1,50);
+
+        answer=a+b;
+
+    }
+
+
+    if(op==="-"){
+
+        a=random(10,80);
+        b=random(1,a);
+
+        answer=a-b;
+
+    }
+
+
+    if(op==="×"){
+
+        a=random(2,12);
+        b=random(2,12);
+
+        answer=a*b;
+
+    }
+
+
+    if(op==="÷"){
+
+        b=random(2,12);
+        answer=random(2,12);
+
+        a=b*answer;
+
+    }
+
+
+    document.getElementById("question").textContent=
+        `${a} ${op} ${b}`;
+
+}
+
+
+/* RANDOM NUMBER */
+
+function random(min,max){
+
+    return Math.floor(
+        Math.random()*(max-min+1)
+    )+min;
+
+}
+
+
+/* AUTO CHECK */
+
+document.getElementById("answer").addEventListener(
+    "input",
+    function(){
+
+        if(this.value==="") return;
+
+        let value=Number(this.value);
+
+
+        if(value===answer){
+
+            correct++;
+            total++;
+
+            document.getElementById("correct")
+                .textContent=correct;
+
+
+            this.value="";
+
+
+            setTimeout(()=>{
+
+                if(time>0){
+                    newQuestion();
+                    this.focus();
+                }
+
+            },120);
+
+        }
+
+    }
+);
+
+
+/* END GAME */
+
+function endGame(){
+
+    clearInterval(timer);
+
+    document.getElementById("game").style.display="none";
+    document.getElementById("result").style.display="block";
+
+
+    let percentage=0;
+
+    if(total>0){
+
+        percentage=
+            Math.round((correct/total)*100);
+
+    }
+
+
+    document.getElementById("percent")
+        .textContent=percentage+"%";
+
+    document.getElementById("total")
+        .textContent=total;
+
+    document.getElementById("finalCorrect")
+        .textContent=correct;
+
+
+    /* STARS */
+
+    document.getElementById("s1")
+        .classList.remove("active");
+
+    document.getElementById("s2")
+        .classList.remove("active");
+
+    document.getElementById("s3")
+        .classList.remove("active");
+
+
+    if(percentage>=0){
+
+        document.getElementById("s1")
+            .classList.add("active");
+
+    }
+
+    if(percentage>=40){
+
+        document.getElementById("s2")
+            .classList.add("active");
+
+    }
+
+    if(percentage>=70){
+
+        document.getElementById("s3")
+            .classList.add("active");
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
