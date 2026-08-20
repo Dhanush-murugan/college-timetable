@@ -57,6 +57,67 @@
 
     </main>
 
+    <!-- Math Game Button -->
+<a href="game.html" class="math-game-button" aria-label="Open Math Game">
+    🎮
+</a>
+
+<style>
+.math-game-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 30px;
+
+    background: linear-gradient(135deg, #7c5cff, #4d35d8);
+    color: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(124, 92, 255, 0.35);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    z-index: 9999;
+
+    transition: 0.2s ease;
+}
+
+.math-game-button:hover {
+    transform: scale(1.08);
+}
+
+.math-game-button:active {
+    transform: scale(0.92);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .math-game-button {
+        width: 56px;
+        height: 56px;
+
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 27px;
+        border-radius: 18px;
+    }
+}
+</style>
+
+
     <!-- Load Data and Logic -->
     <script src="data.js"></script>
     <script src="script.js"></script>
