@@ -176,42 +176,42 @@ const timeTableConfig = {
         "I BSc": ["PYT(MRK)", "PYT(MRK)", "FC(VR)", "TAMIL", "ENGLISH"],
         "II BSc": ["TAMIL", "ENGLISH", "MP(MSR)", "AOA(MSR)", "MP(RTS)"],
         "III BSc": ["SE(MSR)", "DBMS(VAT)", "BDA(RTS)", "DBMS LAB(VAT)", "DBMS LAB(VAT)"],
-        "I MSc": ["ADALAB(RK)", "ADALAB(RK)", "OOAD(VAT)", "A.PY(MRK)", "ADA(RK)"],
+        "I MSc": ["ADALAB(RK)", "ADALAB(RK)", "OOAD(VAT)", "A.PY(MRK)", "ADA(RK)","ADALAB(MSK)","ADALAB(MSK)"],
         "II MSc": ["DIP(RTS)", "NSC(MSK)", "NSC(MSK)", "BT(VR)", "CC(MSK)"]
     },
     "II": {
         "I BSc": ["NUM.METH(VR)", "ENGLISH", "TAMIL", "PYT(MRK)", "PYT(MRK)"],
         "II BSc": ["MP LAB(MSR)", "MP LAB(MSR)", "GT(MSK)", "TAMIL", "ENGLISH"],
         "III BSc": ["DBMS(VAT)", "OS(RK)", "SE(MSR)", "BDA(RTS)", "PROJ()"],
-        "I MSc": ["ADA(RK)", "A.PY(MRK)", "OOAD(VAT)", "OOAD(VAT)", "ASE(MSR)"],
+        "I MSc": ["ADA(RK)", "A.PY(MRK)", "OOAD(VAT)", "OOAD(VAT)", "ASE(MSR)","ADA(RK)","ADA(RK)"],
         "II MSc": ["DIP(RTS)", "NSC(MSK)", "BT(VR)", "DIP LAB(VR)", "DIP LAB(VR)"]
     },
     "III": {
         "I BSc": ["PY. LAB(MRK)", "PY. LAB(MSK)", "NUM.METH(VR)", "ENGLISH", "TAMIL"],
         "II BSc": ["GT(MSK)", "ENGLISH", "MP(MSR)", "TAMIL", "MP(RTS)"],
         "III BSc": ["BDA(RTS)", "SE(MSR)", "DBMS(VAT)", "PROJ()", "PROJ()"],
-        "I MSc": ["ADA(RK)", "A.PY(MRK)", "ADALAB(RK)", "ADALAB(RK)", "ASE(MSR)"],
+        "I MSc": ["ADA(RK)", "A.PY(MRK)", "ADALAB(RK)", "ADALAB(RK)", "ASE(MSR)","ADALAB(RK)","ADALAB(RK)"],
         "II MSc": ["ES(VAT)", "BT(VR)", "DIP(RTS)", "CC(MSK)", "CC(MSK)"]
     },
     "IV": {
         "I BSc": ["ENGLISH", "PY. LAB(MRK)", "PY. LAB(MRK)", "NUM.METH(VR)", "TAMIL"],
         "II BSc": ["GT(MSK)", "MP(RTS)", "AOA(RK)", "TAMIL", "ENGLISH"],
         "III BSc": ["SE(MSR)", "DBMS(VAT)", "NAAN()", "NAAN()", "OS(RK)"],
-        "I MSc": ["ADA(RK)", "ASE(MSR)", "OOAD(VAT)", "ASE(MSR)", "A.PY(MRK)"],
+        "I MSc": ["ADA(RK)", "ASE(MSR)", "OOAD(VAT)", "ASE(MSR)", "A.PY(MRK)","OOAD(VAT)","OOAD(VAT)"],
         "II MSc": ["NSC(VR)", "CC(MSK)", "DIP(RTS)", "DIP LAB(RTS)", "DIP LAB(RTS)"]
     },
     "V": {
         "I BSc": ["TAMIL", "ENGLISH", "PY. LAB(MRK)", "SEC(RK)", "SEC(RK)"],
-        "II BSc": ["ENGLISH", "VE(VR)", "VE(MRK)", "GT(MSK)", "TAMIL"],
+        "II BSc": ["ENGLISH", "GT(MSK)", "VE(VR)", "VE(MRK)", "TAMIL"],
         "III BSc": ["DBMS LAB(VAT)", "DBMS LAB(VAT)", "BDA(RTS)", "SE(MSR)", "PROJ()"],
-        "I MSc": ["ADA(RK)", "A.PY(MRK)", "ASE(MSR)", "ADALAB(MSK)", "ADALAB(MSK)"],
+        "I MSc": ["ADA(RK)", "A.PY(MRK)", "ASE(MSR)", "ADALAB(MSK)", "ADALAB(MSK)","ASE(MSR)","ASE(MSR)"],
         "II MSc": ["CC(MSK)", "DIP(RTS)", "ES(VAT)", "NSC(VR)", "BT(VR)"]
     },
     "VI": {
         "I BSc": ["ENGLISH", "TAMIL", "PYT(MRK)", "NUM.METH(VR)", "FC(VR)"],
         "II BSc": ["MP LAB(VR)", "MP LAB(VR)", "MP LAB(MSR)", "ENGLISH", "TAMIL"],
         "III BSc": ["OS(RK)", "OS(RK)", "PROJ()", "PROJ()", "DBMS(VAT)"],
-        "I MSc": ["OOAD(VAT)", "A.PY(MRK)", "ADA(RK)", "OOAD(VAT)", "ASE(MSR)"],
+        "I MSc": ["OOAD(VAT)", "A.PY(MRK)", "ADA(RK)", "OOAD(VAT)", "ASE(MSR)","A.PY(MRK)","A.PY(MRK)"],
         "II MSc": ["NSC(MSK)", "DIP(RTS)", "CC(MSK)", "DIP LAB(RTS)", "DIP LAB(RTS)"]
     }
 };
