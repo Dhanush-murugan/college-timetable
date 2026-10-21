@@ -19,9 +19,9 @@
             
             <div class="flex-1">
             
-                <h1 class="text-md font-bold leading-tight text-left">GOVERNMENT ARTS COLLEGE <span class="text-xs font-normal">(AUTONOMOUS)</span></h1>
-                <p class="text-xs text-left text-blue-200">NANDANAM, CHENNAI-35</p>
-                <p class="text-xs mt-1 text-yellow-300 font-semibold text-left">DEPARTMENT OF COMPUTER SCIENCE</p>
+                <h1 class="text-md font-bold leading-tight text-center">GOVERNMENT ARTS COLLEGE <span class="text-xs font-normal">(AUTONOMOUS)</span></h1>
+                <p class="text-xs text-center text-blue-200">NANDANAM, CHENNAI-35</p>
+                <p class="text-xs mt-1 text-yellow-300 font-semibold text-center">DEPARTMENT OF COMPUTER SCIENCE</p>
             
             </div>
         </div>
@@ -35,8 +35,13 @@
                 <p class="text-xs text-gray-500 font-semibold uppercase">Current Time</p>
                 <p id="liveTime" class="text-lg font-bold text-blue-900">--:--:--</p>
             </div>
-            <div>
-                <input type="date" id="datePicker" class="border border-gray-300 p-1.5 rounded-lg text-sm bg-gray-50 text-gray-800 font-semibold outline-none focus:ring-2 focus:ring-blue-400">
+    
+            <div class="relative flex items-center border border-gray-300 bg-gray-50 rounded-lg">
+    <!-- இதுதான் எல்லா டிவைஸிலும் dd/mm/yyyy ஃபார்மட்டைக் காட்டும் -->
+                <span id="dateDisplay" class="pl-3 pr-2 py-1.5 text-sm font-extrabold text-blue-900 pointer-events-none">--/--/----</span>
+                <span class="pr-3 text-sm pointer-events-none">📅</span>
+    <!-- இது மொபைல் காலண்டரை ஓபன் செய்ய பின்னணியில் வேலை செய்யும் -->
+                <input type="date" id="datePicker" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
             </div>
         </div>
 
@@ -51,6 +56,67 @@
         </div>
 
     </main>
+
+    <!-- Math Game Button -->
+<a href="game.html" class="math-game-button" aria-label="Open Math Game">
+    🎮
+</a>
+
+<style>
+.math-game-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    font-size: 30px;
+
+    background: linear-gradient(135deg, #7c5cff, #4d35d8);
+    color: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(124, 92, 255, 0.35);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    z-index: 9999;
+
+    transition: 0.2s ease;
+}
+
+.math-game-button:hover {
+    transform: scale(1.08);
+}
+
+.math-game-button:active {
+    transform: scale(0.92);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .math-game-button {
+        width: 56px;
+        height: 56px;
+
+        right: 15px;
+        bottom: 15px;
+
+        font-size: 27px;
+        border-radius: 18px;
+    }
+}
+</style>
+
 
     <!-- Load Data and Logic -->
     <script src="data.js"></script>
